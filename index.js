@@ -53,7 +53,7 @@ module.exports = {
   },
 
   // Add TS support
-  overrides: [
+  overrides: {
     files: ['*.ts', '*.tsx'],
     parserOptions: {
       sourceType: 'module',
@@ -94,5 +94,5 @@ module.exports = {
         }
       ]
     }
-  ]
+  }
 }
