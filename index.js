@@ -61,7 +61,6 @@ module.exports = {
     '@typescript-eslint/no-non-null-assertion': 1,
     '@typescript-eslint/no-require-imports': 1,
     '@typescript-eslint/prefer-for-of': 2,
-
     '@typescript-eslint/member-delimiter-style': [
       2,
       {
