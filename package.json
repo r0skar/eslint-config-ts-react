@@ -1,5 +1,5 @@
 {
-  "name": "eslint-config",
+  "name": "eslint-config-ts-react",
   "version": "0.0.1",
   "description": "Strict eslint config for functional TS(X) projects.",
   "main": "index.js",
