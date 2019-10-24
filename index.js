@@ -8,8 +8,7 @@ module.exports = {
   parser: 'babel-eslint',
 
   extends: [
-    'airbnb-typescript',
-    'plugin:@typescript-eslint/recommended'
+    'airbnb-typescript'
   ],
 
   rules: {
@@ -53,46 +52,52 @@ module.exports = {
   },
 
   // Add TS support
-  overrides: {
-    files: ['*.ts', '*.tsx'],
-    parserOptions: {
-      sourceType: 'module',
-      ecmaVersion: 2019,
-      ecmaFeatures: {
-        jsx: true
-      }
-    },
-    rules: {
-      camelcase: 0,
-      '@typescript-eslint/camelcase': [2, { ignoreDestructuring: true }],
-      '@typescript-eslint/semi': [2, 'never'],
-      '@typescript-eslint/explicit-member-accessibility': 0,
-      '@typescript-eslint/no-empty-interface': 0,
-      '@typescript-eslint/explicit-function-return-type': 0,
-      '@typescript-eslint/promise-function-async': 0,
-      '@typescript-eslint/no-explicit-any': 1,
-      '@typescript-eslint/no-non-null-assertion': 1,
-      '@typescript-eslint/no-require-imports': 1,
-      '@typescript-eslint/no-unnecessary-type-assertion': 2,
-      '@typescript-eslint/prefer-for-of': 2,
-      '@typescript-eslint/prefer-includes': 2,
-      '@typescript-eslint/prefer-string-starts-ends-with': 2,
-      '@typescript-eslint/member-delimiter-style': [
-        2,
-        {
-          multiline: { delimiter: 'none' },
-          singleline: { delimiter: 'semi', requireLast: false }
+  overrides: [
+    {
+      files: ['*.ts', '*.tsx'],
+      parser: '@typescript-eslint/parser',
+      parserOptions: {
+        sourceType: 'module',
+        ecmaVersion: 2019,
+        ecmaFeatures: {
+          jsx: true
         }
+      },
+      extends: [
+        'plugin:@typescript-eslint/recommended'
       ],
-      '@typescript-eslint/no-unused-vars': [
-        2,
-        {
-          varsIgnorePattern: '(^_|^IIFE|^\\$|h)',
-          argsIgnorePattern: '(^_|)',
-          args: 'after-used',
-          ignoreRestSiblings: true
-        }
-      ]
+      rules: {
+        camelcase: 0,
+        '@typescript-eslint/camelcase': [2, { ignoreDestructuring: true }],
+        '@typescript-eslint/semi': [2, 'never'],
+        '@typescript-eslint/explicit-member-accessibility': 0,
+        '@typescript-eslint/no-empty-interface': 0,
+        '@typescript-eslint/explicit-function-return-type': 0,
+        '@typescript-eslint/promise-function-async': 0,
+        '@typescript-eslint/no-explicit-any': 1,
+        '@typescript-eslint/no-non-null-assertion': 1,
+        '@typescript-eslint/no-require-imports': 1,
+        '@typescript-eslint/no-unnecessary-type-assertion': 2,
+        '@typescript-eslint/prefer-for-of': 2,
+        '@typescript-eslint/prefer-includes': 2,
+        '@typescript-eslint/prefer-string-starts-ends-with': 2,
+        '@typescript-eslint/member-delimiter-style': [
+          2,
+          {
+            multiline: { delimiter: 'none' },
+            singleline: { delimiter: 'semi', requireLast: false }
+          }
+        ],
+        '@typescript-eslint/no-unused-vars': [
+          2,
+          {
+            varsIgnorePattern: '(^_|^IIFE|^\\$|h)',
+            argsIgnorePattern: '(^_|)',
+            args: 'after-used',
+            ignoreRestSiblings: true
+          }
+        ]
+      }
     }
-  }
+  ]
 }
