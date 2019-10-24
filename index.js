@@ -8,7 +8,8 @@ module.exports = {
   parser: 'babel-eslint',
 
   extends: [
-    'airbnb'
+    'airbnb-typescript',
+    'plugin:@typescript-eslint/recommended'
   ],
 
   rules: {
@@ -16,7 +17,7 @@ module.exports = {
     'max-len': 0,
     'consistent-return': 0,
     'no-nested-ternary': 0,
-    'camelcase': [2, { ignoreDestructuring: true }],
+    'camelcase': 0,
     'semi': 0,
     'comma-dangle': 0,
     'no-underscore-dangle': 0,
@@ -29,15 +30,6 @@ module.exports = {
     'space-before-blocks': [2, 'always'],
     'array-bracket-spacing': [2, 'always'],
     'object-curly-spacing': [2, 'always'],
-    'no-unused-vars': [
-      2,
-      {
-        varsIgnorePattern: '(^_|^IIFE|^\\$|h)',
-        argsIgnorePattern: '(^_|)',
-        args: 'after-used',
-        ignoreRestSiblings: true
-      }
-    ],
 
     // Imports.
     'import/prefer-default-export': 0,
@@ -58,7 +50,37 @@ module.exports = {
     'react/jsx-first-prop-new-line': 0,
     'react/jsx-curly-spacing': [2, { when: 'always', spacing: { objectLiterals: 'never' } }],
     'react/jsx-closing-bracket-location': [2, 'after-props'],
-    'react/jsx-indent-props': [2, 'first']
+    'react/jsx-indent-props': [2, 'first'],
+
+    // Typescript
+    '@typescript-eslint/semi': [2, 'never'],
+    '@typescript-eslint/no-empty-interface': 0,
+    '@typescript-eslint/explicit-function-return-type': 0,
+    '@typescript-eslint/promise-function-async': 0,
+    '@typescript-eslint/no-explicit-any': 1,
+    '@typescript-eslint/no-non-null-assertion': 1,
+    '@typescript-eslint/no-require-imports': 1,
+    '@typescript-eslint/prefer-for-of': 2,
+
+    '@typescript-eslint/member-delimiter-style': [
+      2,
+      {
+        multiline: { delimiter: 'none' },
+        singleline: { delimiter: 'semi', requireLast: false }
+      }
+    ],
+    'camelcase': 0,
+    '@typescript-eslint/camelcase': [2, { ignoreDestructuring: true }],
+    'no-unused-vars': 0,
+    '@typescript-eslint/no-unused-vars': [
+      2,
+      {
+        varsIgnorePattern: '(^_|^IIFE|^\\$|h)',
+        argsIgnorePattern: '(^_|)',
+        args: 'after-used',
+        ignoreRestSiblings: true
+      }
+    ]
   },
 
   // Add TS support and rules that require type support.
@@ -73,42 +95,11 @@ module.exports = {
           jsx: true
         }
       },
-      extends: [
-        'airbnb-typescript',
-        'plugin:@typescript-eslint/recommended'
-      ],
       rules: {
-        '@typescript-eslint/semi': [2, 'never'],
-        '@typescript-eslint/no-empty-interface': 0,
-        '@typescript-eslint/explicit-function-return-type': 0,
-        '@typescript-eslint/promise-function-async': 0,
-        '@typescript-eslint/no-explicit-any': 1,
-        '@typescript-eslint/no-non-null-assertion': 1,
-        '@typescript-eslint/no-require-imports': 1,
-        '@typescript-eslint/prefer-for-of': 2,
         '@typescript-eslint/prefer-includes': 2,
-        '@typescript-eslint/prefer-string-starts-ends-with': 2,
-        '@typescript-eslint/member-delimiter-style': [
-          2,
-          {
-            multiline: { delimiter: 'none' },
-            singleline: { delimiter: 'semi', requireLast: false }
-          }
-        ],
-        '@typescript-eslint/no-unnecessary-type-assertion': 2,
         '@typescript-eslint/promise-function-async': 2,
-        'camelcase': 0,
-        '@typescript-eslint/camelcase': [2, { ignoreDestructuring: true }],
-        'no-unused-vars': 0,
-        '@typescript-eslint/no-unused-vars': [
-          2,
-          {
-            varsIgnorePattern: '(^_|^IIFE|^\\$|h)',
-            argsIgnorePattern: '(^_|)',
-            args: 'after-used',
-            ignoreRestSiblings: true
-          }
-        ]
+        '@typescript-eslint/no-unnecessary-type-assertion': 2,
+        '@typescript-eslint/prefer-string-starts-ends-with': 2
       }
     }
   ]
