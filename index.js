@@ -99,7 +99,36 @@ module.exports = {
         '@typescript-eslint/prefer-includes': 2,
         '@typescript-eslint/promise-function-async': 2,
         '@typescript-eslint/no-unnecessary-type-assertion': 2,
-        '@typescript-eslint/prefer-string-starts-ends-with': 2
+        '@typescript-eslint/no-unnecessary-type-arguments': 2,
+        '@typescript-eslint/prefer-string-starts-ends-with': 2,
+        '@typescript-eslint/no-misused-promises': 2,
+        '@typescript-eslint/ban-types': [
+          2,
+          {
+            types: {
+              "Array": {
+                "message": "Use <T>[] instead",
+                "fixWith": "<unknown>[]"
+              },
+              "Object": {
+                "message": "Use Record instead",
+                "fixWith": "Record<string, unknown>"
+              },
+              "String": {
+                "message": "Use string instead",
+                "fixWith": "string"
+              },
+              "Boolean": {
+                "message": "Use boolean instead",
+                "fixWith": "boolean"
+              },
+              "Number": {
+                "message": "Use number instead",
+                "fixWith": "number"
+              }
+            }
+          }
+        ]
       }
     }
   ]
