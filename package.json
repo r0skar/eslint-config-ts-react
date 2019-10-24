@@ -4,8 +4,7 @@
   "description": "Strict eslint config for functional TS(X) projects.",
   "main": "index.js",
   "files": [
-    "prettier.js",
-    "patch.js"
+    "prettier.js"
   ],
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^2.2.0",
