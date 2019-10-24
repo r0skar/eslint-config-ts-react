@@ -8,7 +8,7 @@ module.exports = {
   parser: 'babel-eslint',
 
   extends: [
-    'airbnb-typescript'
+    'airbnb'
   ],
 
   rules: {
@@ -16,6 +16,7 @@ module.exports = {
     'max-len': 0,
     'consistent-return': 0,
     'no-nested-ternary': 0,
+    'camelcase': [2, { ignoreDestructuring: true }],
     'semi': 0,
     'comma-dangle': 0,
     'no-underscore-dangle': 0,
@@ -28,6 +29,15 @@ module.exports = {
     'space-before-blocks': [2, 'always'],
     'array-bracket-spacing': [2, 'always'],
     'object-curly-spacing': [2, 'always'],
+    'no-unused-vars': [
+      2,
+      {
+        varsIgnorePattern: '(^_|^IIFE|^\\$|h)',
+        argsIgnorePattern: '(^_|)',
+        args: 'after-used',
+        ignoreRestSiblings: true
+      }
+    ],
 
     // Imports.
     'import/prefer-default-export': 0,
@@ -51,7 +61,7 @@ module.exports = {
     'react/jsx-indent-props': [2, 'first']
   },
 
-  // Add TS support
+  // Add TS support and rules that require type support.
   overrides: [
     {
       files: ['*.ts', '*.tsx'],
@@ -64,20 +74,17 @@ module.exports = {
         }
       },
       extends: [
+        'airbnb-typescript',
         'plugin:@typescript-eslint/recommended'
       ],
       rules: {
-        camelcase: 0,
-        '@typescript-eslint/camelcase': [2, { ignoreDestructuring: true }],
         '@typescript-eslint/semi': [2, 'never'],
-        '@typescript-eslint/explicit-member-accessibility': 0,
         '@typescript-eslint/no-empty-interface': 0,
         '@typescript-eslint/explicit-function-return-type': 0,
         '@typescript-eslint/promise-function-async': 0,
         '@typescript-eslint/no-explicit-any': 1,
         '@typescript-eslint/no-non-null-assertion': 1,
         '@typescript-eslint/no-require-imports': 1,
-        '@typescript-eslint/no-unnecessary-type-assertion': 2,
         '@typescript-eslint/prefer-for-of': 2,
         '@typescript-eslint/prefer-includes': 2,
         '@typescript-eslint/prefer-string-starts-ends-with': 2,
@@ -88,6 +95,11 @@ module.exports = {
             singleline: { delimiter: 'semi', requireLast: false }
           }
         ],
+        '@typescript-eslint/no-unnecessary-type-assertion': 2,
+        '@typescript-eslint/promise-function-async': 2,
+        'camelcase': 0,
+        '@typescript-eslint/camelcase': [2, { ignoreDestructuring: true }],
+        'no-unused-vars': 0,
         '@typescript-eslint/no-unused-vars': [
           2,
           {
