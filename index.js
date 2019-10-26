@@ -35,6 +35,11 @@ module.exports = {
     'import/prefer-default-export': 0,
     'import/no-unresolved': 0,
 
+    // Promises.
+    'prefer-promise-reject-errors': 0,
+    '@typescript-eslint/no-misused-promises': 0,
+    '@typescript-eslint/promise-function-async': 0,
+
     // React.
     'react/prop-types': 0,
     'react/jsx-no-undef': 0,
@@ -56,7 +61,6 @@ module.exports = {
     '@typescript-eslint/semi': [2, 'never'],
     '@typescript-eslint/no-empty-interface': 0,
     '@typescript-eslint/explicit-function-return-type': 0,
-    '@typescript-eslint/promise-function-async': 0,
     '@typescript-eslint/no-explicit-any': 1,
     '@typescript-eslint/no-non-null-assertion': 1,
     '@typescript-eslint/no-require-imports': 1,
@@ -88,6 +92,7 @@ module.exports = {
       files: ['*.ts', '*.tsx'],
       parser: '@typescript-eslint/parser',
       parserOptions: {
+        warnOnUnsupportedTypeScriptVersion: false,
         sourceType: 'module',
         ecmaVersion: 2019,
         ecmaFeatures: {
@@ -96,11 +101,9 @@ module.exports = {
       },
       rules: {
         '@typescript-eslint/prefer-includes': 2,
-        '@typescript-eslint/promise-function-async': 2,
         '@typescript-eslint/no-unnecessary-type-assertion': 2,
         '@typescript-eslint/no-unnecessary-type-arguments': 2,
         '@typescript-eslint/prefer-string-starts-ends-with': 2,
-        '@typescript-eslint/no-misused-promises': 2,
         '@typescript-eslint/ban-types': [
           2,
           {
