@@ -30,6 +30,8 @@ module.exports = {
     'space-before-blocks': [2, 'always'],
     'array-bracket-spacing': [2, 'always'],
     'object-curly-spacing': [2, 'always'],
+    'no-useless-constructor': 0,
+    'lines-between-class-members': 0,
 
     // Imports.
     'import/prefer-default-export': 0,
