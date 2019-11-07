@@ -43,6 +43,7 @@ module.exports = {
     '@typescript-eslint/promise-function-async': 0,
 
     // React.
+    'react/no-unescaped-entities': 0,
     'react/prop-types': 0,
     'react/jsx-no-undef': 0,
     'react/react-in-jsx-scope': 0,
